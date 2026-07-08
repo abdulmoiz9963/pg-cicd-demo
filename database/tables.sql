@@ -13,5 +13,6 @@ INSERT INTO employees (name, department, salary) VALUES
     ('Sara Khan', 'Marketing', 72000),
     ('Bilal Ahmed', 'Engineering', 88000),
     ('Ayesha Malik', 'Finance', 79000),
-    ('Usman Tariq', 'Sales', 68000)
+    ('Usman Tariq', 'Sales', 68000),
+    ('Fahad Nasir', 'Finance', 82000)
 ON CONFLICT DO NOTHING;
