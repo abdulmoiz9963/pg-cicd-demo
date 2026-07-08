@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "abdulmoiz9963/pg-cicd-demo",
+  "pipelineDirectory": "pg-cicd-demo",
+  "workspaceDirectory": "pg-cicd-demo\\pg-cicd-demo",
+  "repositories": {
+    "abdulmoiz9963/pg-cicd-demo": {
+      "repositoryPath": "pg-cicd-demo\\pg-cicd-demo",
+      "lastRunOn": "07/08/2026 14:44:30 +05:00"
+    }
+  },
+  "lastRunOn": "07/08/2026 15:00:28 +05:00"
+}
