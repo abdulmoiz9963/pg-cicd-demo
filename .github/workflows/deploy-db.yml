@@ -1,0 +1,32 @@
+name: Deploy PostgreSQL Database
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-db:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run Table Creation Script
+        env:
+          PGPASSWORD: ${{ secrets.DB_PASSWORD }}
+        run: |
+          psql -h ${{ secrets.DB_HOST }} -p ${{ secrets.DB_PORT }} -U ${{ secrets.DB_USER }} -d ${{ secrets.DB_NAME }} -f database/tables.sql
+
+      - name: Run Procedure Script
+        env:
+          PGPASSWORD: ${{ secrets.DB_PASSWORD }}
+        run: |
+          psql -h ${{ secrets.DB_HOST }} -p ${{ secrets.DB_PORT }} -U ${{ secrets.DB_USER }} -d ${{ secrets.DB_NAME }} -f database/procedures.sql
+
+      - name: Verify Deployment
+        env:
+          PGPASSWORD: ${{ secrets.DB_PASSWORD }}
+        run: |
+          psql -h ${{ secrets.DB_HOST }} -p ${{ secrets.DB_PORT }} -U ${{ secrets.DB_USER }} -d ${{ secrets.DB_NAME }} -c "\dt"
