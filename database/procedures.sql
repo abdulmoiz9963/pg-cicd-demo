@@ -19,3 +19,16 @@ BEGIN
     RETURN avg_sal;
 END;
 $$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION highest_paid_employee()
+RETURNS VARCHAR AS $$
+DECLARE
+    top_employee VARCHAR;
+BEGIN
+    SELECT name INTO top_employee
+    FROM employees
+    ORDER BY salary DESC
+    LIMIT 1;
+    RETURN top_employee;
+END;
+$$ LANGUAGE plpgsql;

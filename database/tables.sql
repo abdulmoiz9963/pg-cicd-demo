@@ -17,5 +17,6 @@ INSERT INTO employees (name, department, salary) VALUES
     ('Hassan Iqbal', 'Engineering', 91000),
     ('Zara Sheikh', 'Marketing', 75000),
     ('Fahad Nasir', 'Finance', 82000) ,
-    ('Abdul Moiz', 'devops', 94000)
+    ('Abdul Moiz', 'devops', 94000),
+    ('Fouzan', 'aws devops', 94000)
 ON CONFLICT (name) DO NOTHING;
