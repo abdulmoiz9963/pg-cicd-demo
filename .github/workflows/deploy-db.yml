@@ -38,6 +38,6 @@ jobs:
           psql -h ${{ secrets.DB_HOST }} -p ${{ secrets.DB_PORT }} -U ${{ secrets.DB_USER }} -d ${{ secrets.DB_NAME }} -c "SELECT get_employee_count();"
 
           Write-Host "===== Avg Salary in Engineering (via function) ====="
-          psql -h ${{ secrets.DB_HOST }} -p ${{ secrets.DB_PORT }} -U ${{ secrets.DB_USER }} -d ${{ secrets.DB_NAME }} -c "SELECT avg_salary_by_department();"
+          psql -h ${{ secrets.DB_HOST }} -p ${{ secrets.DB_PORT }} -U ${{ secrets.DB_USER }} -d ${{ secrets.DB_NAME }} -c "SELECT avg_salary_by_department('Engineering');"
           Write-Host "===== Avg Salary in Engineering (via function) ====="
           psql -h ${{ secrets.DB_HOST }} -p ${{ secrets.DB_PORT }} -U ${{ secrets.DB_USER }} -d ${{ secrets.DB_NAME }} -c "SELECT highest_paid_employee();"
